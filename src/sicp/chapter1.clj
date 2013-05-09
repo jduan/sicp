@@ -5,3 +5,7 @@
   [x]
   (println x "Hello, World!"))
 
+(defn sum-of-squares-of-two-largest [& args]
+  (letfn [(square [x] (* x x))
+          (largest [xs] (take 2 (reverse (sort xs))))]
+    (apply + (map square (largest args)))))

@@ -31,4 +31,9 @@
                   (/ (+ 5 4
                         (- 2 (- 3 (+ 6 (/ 4 5)))))
                      (* 3 (- 6 2) (- 2 7))))))
+  (testing "Exercise 1.3"
+           (is (= 58
+                  (sum-of-squares-of-two-largest 3 7 1)))
+           (is (= 13
+                  (sum-of-squares-of-two-largest 1 2 3))))
   )
