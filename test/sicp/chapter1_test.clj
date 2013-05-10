@@ -41,4 +41,6 @@
                   (a-plus-abs-b 3 -5)))
            (is (= 10
                   (a-plus-abs-b 5 5))))
+  (testing "Exercise 1.5"
+           (is (thrown? StackOverflowError (mytest 0 (p)))))
   )

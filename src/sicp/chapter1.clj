@@ -12,3 +12,8 @@
 
 (defn a-plus-abs-b [a b]
   ((if (> b 0) + -) a b))
+
+(defn p []
+  (p))
+(defn mytest [x y]
+  (if (= x 0) 0 y))
