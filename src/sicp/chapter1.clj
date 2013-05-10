@@ -9,3 +9,6 @@
   (letfn [(square [x] (* x x))
           (largest [xs] (take 2 (reverse (sort xs))))]
     (apply + (map square (largest args)))))
+
+(defn a-plus-abs-b [a b]
+  ((if (> b 0) + -) a b))
