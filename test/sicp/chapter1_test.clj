@@ -43,4 +43,7 @@
                   (a-plus-abs-b 5 5))))
   (testing "Exercise 1.5"
            (is (thrown? StackOverflowError (mytest 0 (p)))))
+
+  (testing "square roots"
+           (is (= 1.4142156862745097 (square-root 2))))
   )
