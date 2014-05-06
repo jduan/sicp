@@ -48,6 +48,9 @@
   (testing "Exercise 1.5"
     (is (thrown? StackOverflowError (mytest 0 (p)))))
 
-  (testing "square roots"
+  (testing "Exercise 1.6"
+    (is (thrown? StackOverflowError (square-root2 2))))
+
+  (testing "Exercise 1.7"
     (is (= 1.4142156862745097 (square-root 2))))
   )
