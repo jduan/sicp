@@ -26,21 +26,25 @@
                        :else -1)
                  (+ a 1))))
     )
+
   (testing "Exercise 1.2"
     (is (= (/ -37 150)
            (/ (+ 5 4
                  (- 2 (- 3 (+ 6 (/ 4 5)))))
               (* 3 (- 6 2) (- 2 7))))))
+
   (testing "Exercise 1.3"
     (is (= 58
            (sum-of-squares-of-two-largest 3 7 1)))
     (is (= 13
            (sum-of-squares-of-two-largest 1 2 3))))
+
   (testing "Exercise 1.4"
     (is (= 8
            (a-plus-abs-b 3 -5)))
     (is (= 10
            (a-plus-abs-b 5 5))))
+
   (testing "Exercise 1.5"
     (is (thrown? StackOverflowError (mytest 0 (p)))))
 
