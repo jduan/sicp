@@ -52,5 +52,7 @@
     (is (thrown? StackOverflowError (square-root2 2))))
 
   (testing "Exercise 1.7"
-    (is (= 1.4142156862745097 (square-root 2))))
+    (is (= 1.414213562373095 (square-root 2)))
+    (is (= 0.01 (square-root 0.0001)))
+    (is (= 6.5759594913922966E7 (square-root 4324324323243243))))
   )

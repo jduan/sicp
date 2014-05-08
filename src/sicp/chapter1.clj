@@ -52,6 +52,5 @@
           (average [a b]
             (/ (+ a b) 2.0))
           (good-enough? [guess]
-            (< (abs (- (* guess guess) x)) 0.001))
-          ]
+            (< (/ (abs (- (* guess guess) x)) x) 0.00000000000001))]
     (square-root-internal 1)))
