@@ -54,3 +54,19 @@
           (good-enough? [guess]
             (< (/ (abs (- (* guess guess) x)) x) 0.00000000000001))]
     (square-root-internal 1)))
+
+;; 1.8 cube roots by Newton's method
+(defn cube-root [x]
+  (letfn [(abs [x]
+            (if (> x 0) x (- x)))
+          (cube-root-internal [guess]
+            (if (good-enough? guess)
+              guess
+              (cube-root-internal (improve-guess guess))))
+          (improve-guess [guess]
+            (/ (+ (/ x (* guess guess))
+                  (* 2 guess))
+               3.0))
+          (good-enough? [guess]
+            (< (/ (abs (- (* guess guess guess) x)) x) 0.00000000000001))]
+    (cube-root-internal 1)))
