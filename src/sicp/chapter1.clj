@@ -70,3 +70,13 @@
           (good-enough? [guess]
             (< (/ (abs (- (* guess guess guess) x)) x) 0.00000000000001))]
     (cube-root-internal 1)))
+
+(defn fib-recur [n]
+  (if (< n 2) n
+    (+ (fib-recur (dec n)) (fib-recur (- n 2)))))
+
+(defn fib-iter [n]
+  (letfn [(helper [a b count]
+            (if (zero? count) b
+              (helper (+ a b) a (dec count))))]
+    (helper 1 0 n)))
