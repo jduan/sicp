@@ -89,9 +89,18 @@
     (is (= 25 (f11-iter 5)))
     )
 
-  (testing "Exercise 1.12"
-    (is (= '(1 2) (next-level '(1 1))))
-    (is (= '(1 4 6 4) (next-level '(1 3 3 1))))
+  (testing "Exercise 1.12 next-level"
+    (is (= '(1 2 1) (next-level '(1 1))))
+    (is (= '(1 4 6 4 1) (next-level '(1 3 3 1))))
+    (is (= '(1 5 10 10 5 1) (next-level '(1 4 6 4 1))))
+    )
+
+  (testing "Exercise 1.12 pascal-triangle"
+    (is (= '(1) (pascal-triangle 1)))
+    (is (= '(1 1) (pascal-triangle 2)))
+    (is (= '(1 2 1) (pascal-triangle 3)))
+    (is (= '(1 4 6 4 1) (pascal-triangle 5)))
+    (is (= '(1 5 10 10 5 1) (pascal-triangle 6)))
     )
 
   )

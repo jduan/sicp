@@ -124,5 +124,11 @@
 
 ;; Given a list like (1 5 10 10 5 1), return (1 6 15 20 15 6)
 (defn next-level [lst]
-  (cons 1
-        (map (fn [lst] (apply + lst)) (partition 2 1 lst))))
+  (concat
+    (cons 1
+          (map (fn [lst] (apply + lst)) (partition 2 1 lst))) '(1)))
+
+(defn pascal-triangle [n]
+  (cond (= 1 n) '(1)
+        (= 2 n) '(1 1)
+        :else (next-level (pascal-triangle (dec n)))))
