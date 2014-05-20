@@ -80,3 +80,29 @@
             (if (zero? count) b
               (helper (+ a b) a (dec count))))]
     (helper 1 0 n)))
+
+;; Exercise 1.9
+;; The first procedure is recursive.
+;; The second procedure is iterative
+
+(defn cc [n]
+  ;; Counting change
+  ;; Given 50, 25, 10, 5, and 1, how many different ways can we make changes of n?
+  (defn max-of-kind [kind]
+    (cond (= kind 5) 50
+          (= kind 4) 25
+          (= kind 3) 10
+          (= kind 2) 5
+          (= kind 1) 1))
+
+  ;; The idea is:
+  ;; When you make changes, you use either a kind of coins or you don't.
+  (defn count-change [n kinds]
+    (let [max-kind (max-of-kind kinds)]
+      (cond (= 1 kinds) 1
+            (>= n max-kind) (+ (count-change (- n max-kind) kinds)
+                               (count-change n (- kinds 1))
+                               )
+            :else (count-change n (- kinds 1)))))
+
+  (count-change n 5))

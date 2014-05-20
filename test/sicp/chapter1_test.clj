@@ -66,6 +66,9 @@
     (is (= 2880067194370816120 (fib-iter 90)))
     )
 
-  )
+  (testing "Counting change"
+    (is (= 292 (cc 100)))
+    (is (= 50 (cc 50)))
+    )
 
-(fib-recur 10)
+  )
