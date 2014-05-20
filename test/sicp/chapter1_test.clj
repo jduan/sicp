@@ -89,4 +89,9 @@
     (is (= 25 (f11-iter 5)))
     )
 
+  (testing "Exercise 1.12"
+    (is (= '(1 2) (next-level '(1 1))))
+    (is (= '(1 4 6 4) (next-level '(1 3 3 1))))
+    )
+
   )

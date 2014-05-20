@@ -119,3 +119,10 @@
     (if (zero? n) a
       (helper (dec n) b c (+ c (* 2 b) (* 3 a)))))
   (helper n 0 1 2))
+
+;; Exercise 1.12
+
+;; Given a list like (1 5 10 10 5 1), return (1 6 15 20 15 6)
+(defn next-level [lst]
+  (cons 1
+        (map (fn [lst] (apply + lst)) (partition 2 1 lst))))
