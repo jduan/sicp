@@ -71,4 +71,22 @@
     (is (= 50 (cc 50)))
     )
 
+  (testing "Exercise 1.11 recursive"
+    (is (= 0 (f11-recur 0)))
+    (is (= 1 (f11-recur 1)))
+    (is (= 2 (f11-recur 2)))
+    (is (= 4 (f11-recur 3)))
+    (is (= 11 (f11-recur 4)))
+    (is (= 25 (f11-recur 5)))
+    )
+
+  (testing "Exercise 1.11 iterative"
+    (is (= 0 (f11-iter 0)))
+    (is (= 1 (f11-iter 1)))
+    (is (= 2 (f11-iter 2)))
+    (is (= 4 (f11-iter 3)))
+    (is (= 11 (f11-iter 4)))
+    (is (= 25 (f11-iter 5)))
+    )
+
   )

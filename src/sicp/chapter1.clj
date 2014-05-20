@@ -106,3 +106,16 @@
             :else (count-change n (- kinds 1)))))
 
   (count-change n 5))
+
+;; Exercise 1.11
+(defn f11-recur [n]
+  (if (< n 3) n
+    (+ (f11-recur (dec n))
+       (* 2 (f11-recur (- n 2)))
+       (* 3 (f11-recur (- n 3))))))
+
+(defn f11-iter [n]
+  (defn helper [n a b c]
+    (if (zero? n) a
+      (helper (dec n) b c (+ c (* 2 b) (* 3 a)))))
+  (helper n 0 1 2))
