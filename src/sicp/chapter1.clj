@@ -132,3 +132,7 @@
   (cond (= 1 n) '(1)
         (= 2 n) '(1 1)
         :else (next-level (pascal-triangle (dec n)))))
+
+;; Exercise 1.15
+;; a. 5 times
+;; b. the space and time complexity are log3 of n
