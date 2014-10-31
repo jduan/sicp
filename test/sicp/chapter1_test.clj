@@ -103,4 +103,14 @@
     (is (= '(1 5 10 10 5 1) (pascal-triangle 6)))
     )
 
+  (testing "Exercise 1.16 fast-expr-recur"
+    (is (= 1024 (fast-expr-recur 2 10)))
+    (is (= 1267650600228229401496703205376N (fast-expr-recur 2 100)))
+    )
+
+  (testing "Exercise 1.16 fast-expr-iter"
+    (is (= 1024 (fast-expr-iter 2 10)))
+    (is (= 1267650600228229401496703205376N (fast-expr-iter 2 100)))
+    )
+
   )

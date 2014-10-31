@@ -136,3 +136,17 @@
 ;; Exercise 1.15
 ;; a. 5 times
 ;; b. the space and time complexity are log3 of n
+
+;; Exercise 1.16
+(defn square [n] (*' n n))
+(defn fast-expr-recur [b n]
+  (cond (zero? n) 1
+        (even? n) (square (fast-expr-recur b (/ n 2)))
+        :else (*' b (fast-expr-recur b (dec n)))))
+
+(defn fast-expr-iter [b n]
+  (defn helper [b n acc]
+    (cond (zero? n) acc
+          (even? n) (helper (square b) (/ n 2) acc)
+          :else (helper (square b) (/ (dec n) 2) (* acc b))))
+  (helper b n 1))
