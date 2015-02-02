@@ -1,9 +1,12 @@
 (ns sicp.chapter1)
 
-(defn sum-of-squares-of-two-largest [& args]
-  (letfn [(square [x] (* x x))
-          (largest [xs] (take 2 (reverse (sort xs))))]
-    (apply + (map square (largest args)))))
+(defn bigger [a b]
+  (if (>= a b) a b))
+(defn sum-of-squares [a b]
+  (+ (* a a) (* b b)))
+(defn sum-of-squares-of-two-largest [a b c]
+  (cond (>= a b) (sum-of-squares a (bigger b c))
+        :else (sum-of-squares b (bigger a c))))
 
 (defn a-plus-abs-b [a b]
   ((if (> b 0) + -) a b))
