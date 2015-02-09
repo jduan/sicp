@@ -96,6 +96,13 @@
 ;; The first procedure is recursive.
 ;; The second procedure is iterative
 
+;; counting change
+(defn count-change2 [n denoms]
+  (cond (empty? denoms) 0
+        (zero? n) 1
+        (>= n (first denoms)) (+ (count-change2 (- n (first denoms)) denoms)
+                                 (count-change2 n (rest denoms)))
+        :else (count-change2 n (rest denoms))))
 (defn cc [n]
   ;; Counting change
   ;; Given 50, 25, 10, 5, and 1, how many different ways can we make changes of n?

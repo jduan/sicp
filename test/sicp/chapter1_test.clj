@@ -69,6 +69,8 @@
   (testing "Counting change"
     (is (= 292 (cc 100)))
     (is (= 50 (cc 50)))
+    (is (= 292 (count-change2 100 [50 25 10 5 1])))
+    (is (= 50 (count-change2 50 [50 25 10 5 1])))
     )
 
   (testing "Exercise 1.11 recursive"
