@@ -74,6 +74,14 @@
             (< (/ (abs (- (* guess guess guess) x)) x) 0.00000000000001))]
     (cube-root-internal 1)))
 
+;; iterative factorial
+(defn factorial [n]
+  (letfn [(factorial-iter [acc counter]
+            (if (= counter 1)
+              acc
+              (factorial-iter (* acc counter) (- counter 1))))]
+    (factorial-iter 1 n)))
+
 (defn fib-recur [n]
   (if (< n 2) n
     (+ (fib-recur (dec n)) (fib-recur (- n 2)))))
