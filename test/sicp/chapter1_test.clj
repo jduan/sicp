@@ -103,6 +103,11 @@
     (is (= '(1 2 1) (pascal-triangle 3)))
     (is (= '(1 4 6 4 1) (pascal-triangle 5)))
     (is (= '(1 5 10 10 5 1) (pascal-triangle 6)))
+    (is (= '(1) (pascal-triangle2 1)))
+    (is (= '(1 1) (pascal-triangle2 2)))
+    (is (= '(1 2 1) (pascal-triangle2 3)))
+    (is (= '(1 4 6 4 1) (pascal-triangle2 5)))
+    (is (= '(1 5 10 10 5 1) (pascal-triangle2 6)))
     )
 
   (testing "Exercise 1.16 fast-expr-recur"

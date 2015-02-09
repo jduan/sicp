@@ -151,6 +151,22 @@
         (= 2 n) '(1 1)
         :else (next-level (pascal-triangle (dec n)))))
 
+(defn join-neighbors [lst]
+  (if (< (count lst) 2) '()
+    (cons (+ (first lst) (second lst))
+          (join-neighbors (rest lst)))))
+
+(defn next-level2 [lst]
+  (cons 1 (concat (join-neighbors lst) '(1))))
+
+(defn pascal-triangle-iter [n acc]
+  (if (zero? n) acc
+    (pascal-triangle-iter (dec n) (next-level2 acc))))
+
+(defn pascal-triangle2 [n]
+  (if (= 1 n) '(1)
+    (pascal-triangle-iter (- n 1) '(1))))
+
 ;; Exercise 1.15
 ;; a. 5 times
 ;; b. the space and time complexity are log3 of n
