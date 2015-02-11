@@ -196,3 +196,12 @@
           (even? n) (helper (square b) (/ n 2) acc)
           :else (helper (square b) (/ (- n 1) 2) (* acc b))))
   (helper b n 1))
+
+;; Exercise 1.17
+(defn fast-multiplication-recur [a b]
+  (letfn [(double [x] (* 2 x))
+          (halve [x] (/ x 2))]
+    (cond
+      (zero? b) 0
+      (even? b) (fast-multiplication-recur (double a) (halve b))
+      :else (+ a (fast-multiplication-recur a (- b 1))))))
