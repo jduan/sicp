@@ -126,4 +126,8 @@
     (is (= 200 (fast-multiplication-recur 2 100)))
     )
 
+  (testing "Exercise 1.18 fast-multiplication-iter"
+    (is (= 20 (fast-multiplication-iter 2 10)))
+    (is (= 200 (fast-multiplication-iter 2 100)))
+    )
   )

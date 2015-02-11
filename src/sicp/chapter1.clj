@@ -205,3 +205,14 @@
       (zero? b) 0
       (even? b) (fast-multiplication-recur (double a) (halve b))
       :else (+ a (fast-multiplication-recur a (- b 1))))))
+
+;; Exercise 1.18
+(defn fast-multiplication-iter [a b]
+  (letfn [(double [x] (* 2 x))
+          (halve [x] (/ x 2))
+          (helper [a b acc]
+            (cond
+              (zero? b) acc
+              (even? b) (helper (double a) (halve b) acc)
+              :else (helper a (- b 1) (+ acc a))))]
+    (helper a b 0)))
