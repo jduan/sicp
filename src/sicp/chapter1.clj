@@ -216,3 +216,18 @@
               (even? b) (helper (double a) (halve b) acc)
               :else (helper a (- b 1) (+ acc a))))]
     (helper a b 0)))
+
+;; Exercise 1.29
+(defn cube [x] (* x x x))
+(defn sum [term a next b]
+  (if (> a b)
+    0
+    (+ (term a)
+       (sum term (next a) next b))))
+(defn simpsons-rule [f a b n]
+  (let [h (/ (- b a) n)]
+    (letfn [(yk [k] (f (+ a (* k h))))
+            (term [k] (cond (or (zero? k) (= n k)) (yk k)
+                            (even? k) (* 2 (yk k))
+                            :else (* 4 (yk k))))]
+      (/ (* h (sum term 0 inc n)) 3))))

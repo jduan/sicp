@@ -130,4 +130,9 @@
     (is (= 20 (fast-multiplication-iter 2 10)))
     (is (= 200 (fast-multiplication-iter 2 100)))
     )
+
+  (testing "Exercise 1.29 simpsons-rule"
+    (is (= 1/4 (simpsons-rule cube 0 1 100)))
+    (is (= 1/4 (simpsons-rule cube 0 1 1000)))
+    )
   )
