@@ -135,4 +135,9 @@
     (is (= 1/4 (simpsons-rule cube 0 1 100)))
     (is (= 1/4 (simpsons-rule cube 0 1 1000)))
     )
+
+  (testing "Exercise 1.30 sum-iter"
+    (is (= 3025 (sum-iter cube 1 inc 10)))
+    (is (= 55 (sum-iter identity 1 inc 10)))
+    )
   )

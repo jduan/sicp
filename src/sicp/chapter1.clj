@@ -231,3 +231,10 @@
                             (even? k) (* 2 (yk k))
                             :else (* 4 (yk k))))]
       (/ (* h (sum term 0 inc n)) 3))))
+
+;; Exercise 1.30
+(defn sum-iter [term a next b]
+  (letfn [(helper [x acc]
+            (if (> x b) acc
+              (helper (next x) (+ (term x) acc))))]
+    (helper a 0)))
