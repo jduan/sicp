@@ -238,3 +238,31 @@
             (if (> x b) acc
               (helper (next x) (+ (term x) acc))))]
     (helper a 0)))
+
+;; Exercise 1.31
+(defn product-recur [term a next b]
+  (if (> a b)
+    1
+    (* (term a) (product-recur term (next a) next b))))
+
+(defn factorial2 [n]
+  (product-recur identity 1 inc n))
+
+(defn pi [n]
+  (letfn [(term [x] (if (odd? x) (/ (inc x) (+ x 2) 1.0)
+                      (/ (+ x 2) (inc x) 1.0)))]
+    (* 4 (product-recur term 1 inc n))))
+
+(defn abs [n]
+  (if (< n 0) (- 0 n)
+    n))
+
+(defn product-iter [term a next b]
+  (letfn [(helper [x acc]
+            (if (> x b)
+              acc
+              (helper (inc x) (* (term x) acc))))]
+    (helper a 1)))
+
+(defn factorial3 [n]
+  (product-iter identity 1 inc n))

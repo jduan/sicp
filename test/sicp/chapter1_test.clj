@@ -140,4 +140,10 @@
     (is (= 3025 (sum-iter cube 1 inc 10)))
     (is (= 55 (sum-iter identity 1 inc 10)))
     )
+
+  (testing "Exercise 1.31 sum-iter"
+    (is (= 3628800 (factorial2 10)))
+    (is (= 3628800 (factorial3 10)))
+    (is (> 0.01 (abs (- 3.1415 (pi 2000)))))
+    )
   )
