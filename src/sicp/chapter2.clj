@@ -45,3 +45,12 @@
 (defn equal-rat? [x y]
   (= (* (numer x) (denom y))
      (* (numer y) (denom x))))
+
+;; Exercise 2.1
+(defn abs [x]
+     (if (> x 0) x (- x)))
+
+(defn make-rat2 [x y]
+  (if (>= (* x y) 0)
+    (make-rat (abs x) (abs y))
+    (make-rat (- 0 (abs x)) (abs y))))
