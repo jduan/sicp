@@ -49,4 +49,10 @@
                              (make-point 3 4) (make-point 7 18)))
            56))
     )
+  (is (= (rectangle-perimeter2 (make-rectangle2
+                                 (make-point 3 4) 7 8))
+         30))
+  (is (= (rectangle-area2 (make-rectangle2
+                            (make-point 3 4) 7 8))
+         56))
   )

@@ -115,3 +115,21 @@
 (defn rectangle-area [rectangle]
   (* (rectangle-width rectangle)
      (rectangle-height rectangle)))
+
+(defn make-rectangle2 [down-left width height]
+  (list down-left width height))
+
+(defn rectangle-width2 [rectangle]
+  (second rectangle))
+
+(defn rectangle-height2 [rectangle]
+  (nth rectangle 2))
+
+(defn rectangle-perimeter2 [rectangle]
+  (*  2 (+ (rectangle-width2 rectangle)
+           (rectangle-height2 rectangle))))
+
+(defn rectangle-area2 [rectangle]
+  (* (rectangle-width2 rectangle)
+     (rectangle-height2 rectangle)))
+
