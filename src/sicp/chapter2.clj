@@ -54,3 +54,38 @@
   (if (>= (* x y) 0)
     (make-rat (abs x) (abs y))
     (make-rat (- 0 (abs x)) (abs y))))
+
+;; Exercise 2.2
+(defn make-point [x y]
+  (list x y))
+
+(defn x-point [p]
+  (first p))
+
+(defn y-point [p]
+  (second p))
+
+(defn print-point [p]
+  (do
+    (print "(")
+    (print (x-point p))
+    (print ",")
+    (print (y-point p))
+    (println ")")))
+
+(defn make-segment [start-point end-point]
+  (list start-point end-point))
+
+(defn start-segment [segment]
+  (first segment))
+
+(defn end-segment [segment]
+  (second segment))
+
+(defn midpoint-segment [segment]
+  (letfn [(average [x y] (/ (+ x y) 2))]
+    (let [start-point (start-segment segment)
+          end-point (end-segment segment)]
+      (make-point
+        (average (x-point start-point) (x-point end-point))
+        (average (y-point start-point) (y-point end-point))))))
