@@ -34,4 +34,19 @@
                                            (make-point -2 -2)))
            (make-point -1/2 -1/2)))
     )
+
+  (testing "Exercise 2.3"
+    (is (= (rectangle-width (make-rectangle
+                              (make-point 3 4) (make-point 7 18)))
+           4))
+    (is (= (rectangle-height (make-rectangle
+                              (make-point 3 4) (make-point 7 18)))
+           14))
+    (is (= (rectangle-perimeter (make-rectangle
+                                  (make-point 3 4) (make-point 7 18)))
+           36))
+    (is (= (rectangle-area (make-rectangle
+                             (make-point 3 4) (make-point 7 18)))
+           56))
+    )
   )

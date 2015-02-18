@@ -89,3 +89,29 @@
       (make-point
         (average (x-point start-point) (x-point end-point))
         (average (y-point start-point) (y-point end-point))))))
+
+;; Exercise 2.3
+(defn make-rectangle [down-left up-right]
+  (list down-left up-right))
+
+(defn rectangle-down-left [rectangle]
+  (first rectangle))
+
+(defn rectangle-up-right [rectangle]
+  (second rectangle))
+
+(defn rectangle-width [rectangle]
+  (- (x-point (rectangle-up-right rectangle))
+     (x-point (rectangle-down-left rectangle))))
+
+(defn rectangle-height [rectangle]
+  (- (y-point (rectangle-up-right rectangle))
+     (y-point (rectangle-down-left rectangle))))
+
+(defn rectangle-perimeter [rectangle]
+  (* 2 (+ (rectangle-width rectangle)
+          (rectangle-height rectangle))))
+
+(defn rectangle-area [rectangle]
+  (* (rectangle-width rectangle)
+     (rectangle-height rectangle)))
