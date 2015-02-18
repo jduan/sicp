@@ -4,7 +4,19 @@
 
 (deftest a-test
   (testing "Exercise 2.1"
-    (is (= 10 10))
+    (is (= (gcd 4 8) 4))
+    (is (= (gcd 4 6) 2))
+    (is (= (numer (make-rat 3 4)) 3))
+    (is (= (denom (make-rat 3 4)) 4))
+    (is (= (add-rat (make-rat 3 4) (make-rat 5 6)) (make-rat 19 12)))
+    (is (= (sub-rat (make-rat 3 4) (make-rat 5 6)) (make-rat -1 12)))
+    (is (= (mul-rat (make-rat 3 4) (make-rat 5 6)) (make-rat 5 8)))
+    (is (= (div-rat (make-rat 3 4) (make-rat 5 6)) (make-rat 9 10)))
+    (is (= true (equal-rat? (make-rat 3 4) (make-rat 9 12))))
+    (is (= 3 (numer (make-rat2 -12 -16))))
+    (is (= 4 (denom (make-rat2 -12 -16))))
+    (is (= -3 (numer (make-rat2 12 -16))))
+    (is (= 4 (denom (make-rat2 12 -16))))
     )
 
   (testing "Exercise 2.2"
