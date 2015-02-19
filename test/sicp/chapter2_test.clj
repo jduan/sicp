@@ -57,8 +57,13 @@
          56))
 
   (testing "Exercise 2.4"
-    (is (= (car (cons 3 4)) 3))
-    (is (= (cdr (cons 3 4)) 4))
+    (is (= (car1 (cons1 3 4)) 3))
+    (is (= (cdr1 (cons1 3 4)) 4))
+    )
+
+  (testing "Exercise 2.5"
+    (is (= (car2 (cons2 3 4)) 3))
+    (is (= (cdr2 (cons2 3 4)) 4))
     )
 
   )

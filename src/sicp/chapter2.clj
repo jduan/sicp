@@ -1,4 +1,6 @@
-(ns sicp.chapter2)
+(ns sicp.chapter2
+  (:use [clojure.math.numeric-tower :only [expt]]
+    ))
 
 (defn gcd [x y]
   (letfn [(helper [small big]
@@ -134,11 +136,26 @@
      (rectangle-height2 rectangle)))
 
 ;; Exercise 2.4
-(defn cons [x y]
+(defn cons1 [x y]
   (fn [m] (m x y)))
 
-(defn car [z]
+(defn car1 [z]
   (z (fn [p q] p)))
 
-(defn cdr [z]
+(defn cdr1 [z]
   (z (fn [p q] q)))
+
+;; Exercise 2.5
+(defn cons2 [x y]
+  (* (expt 2 x) (expt 3 y)))
+
+(defn cons2helper [pair acc divisor]
+  (if (zero? (rem pair divisor))
+    (cons2helper (quot pair divisor) (inc acc) divisor)
+    acc))
+
+(defn car2 [pair]
+  (cons2helper pair 0 2))
+
+(defn cdr2 [pair]
+  (cons2helper pair 0 3))
