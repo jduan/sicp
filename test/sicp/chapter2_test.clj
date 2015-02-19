@@ -55,4 +55,10 @@
   (is (= (rectangle-area2 (make-rectangle2
                             (make-point 3 4) 7 8))
          56))
+
+  (testing "Exercise 2.4"
+    (is (= (car (cons 3 4)) 3))
+    (is (= (cdr (cons 3 4)) 4))
+    )
+
   )

@@ -133,3 +133,12 @@
   (* (rectangle-width2 rectangle)
      (rectangle-height2 rectangle)))
 
+;; Exercise 2.4
+(defn cons [x y]
+  (fn [m] (m x y)))
+
+(defn car [z]
+  (z (fn [p q] p)))
+
+(defn cdr [z]
+  (z (fn [p q] q)))
