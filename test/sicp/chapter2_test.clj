@@ -66,4 +66,11 @@
     (is (= (cdr2 (cons2 3 4)) 4))
     )
 
+  (testing "Exercise 2.6"
+    (is (= ((one inc) 0) 1))
+    (is (= ((two inc) 0) 2))
+    (is (= (((plus one two) inc) 0) 3))
+    (is (= (((plus four seven) inc) 0) 11))
+    )
+
   )

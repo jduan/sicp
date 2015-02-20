@@ -159,3 +159,25 @@
 
 (defn cdr2 [pair]
   (cons2helper pair 0 3))
+
+;; Exercise 2.6
+(def zero
+  (fn [f] (fn [x] x)))
+
+(defn add-1 [n]
+  (fn [f] (fn [x] (f ((n f) x)))))
+
+(def one
+  (fn [f] (fn [x] (f x))))
+
+(def two
+  (fn [f] (fn [x] (f (f x)))))
+
+(defn plus [a b]
+  (fn [f] (fn [x]
+            ((b f)
+             ((a f) x)))))
+
+(def three (plus one two))
+(def four (plus two two))
+(def seven (plus three four))
