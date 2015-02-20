@@ -73,4 +73,20 @@
     (is (= (((plus four seven) inc) 0) 11))
     )
 
+  (testing "Exercise 2.7"
+    (is (= (lower-bound (make-interval 3 7)) 3))
+    (is (= (lower-bound (make-interval 7 3)) 3))
+    (is (= (upper-bound (make-interval 7 3)) 7))
+    (is (= (upper-bound (make-interval 3 7)) 7))
+    (is (= (add-interval (make-interval 3 7)
+                         (make-interval 5 10))
+           (make-interval 8 17)))
+    (is (= (mul-interval (make-interval 3 7)
+                         (make-interval 5 10))
+           (make-interval 15 70)))
+    (is (= (div-interval (make-interval 3 7)
+                         (make-interval 5 10))
+           (make-interval 3/10 7/5)))
+    )
+
   )
