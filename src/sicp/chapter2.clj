@@ -208,3 +208,7 @@
   (mul-interval x
                 (make-interval (/ 1 (upper-bound y))
                                (/ 1 (lower-bound y)))))
+
+(defn sub-interval [x y]
+  (make-interval (- (lower-bound x) (upper-bound y))
+                 (- (upper-bound x) (lower-bound y))))

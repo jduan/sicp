@@ -87,6 +87,9 @@
     (is (= (div-interval (make-interval 3 7)
                          (make-interval 5 10))
            (make-interval 3/10 7/5)))
+    (is (= (sub-interval (make-interval 3 7)
+                         (make-interval 5 10))
+           (make-interval -7 2)))
     )
 
   )
