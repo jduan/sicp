@@ -73,7 +73,7 @@
     (is (= (((plus four seven) inc) 0) 11))
     )
 
-  (testing "Exercise 2.7"
+  (testing "Exercise 2.7 and 2.8"
     (is (= (lower-bound (make-interval 3 7)) 3))
     (is (= (lower-bound (make-interval 7 3)) 3))
     (is (= (upper-bound (make-interval 7 3)) 7))
@@ -91,5 +91,19 @@
                          (make-interval 5 10))
            (make-interval -7 2)))
     )
+
+  (testing "Exercise 2.9"
+    (is (= (width-of-sum-of-two-intervals
+             (make-interval 3 7)
+             (make-interval 5 10))
+           (width-of-sum-of-two-intervals2
+             (make-interval 3 7)
+             (make-interval 5 10)))))
+    (is (= (width-of-diff-of-two-intervals
+             (make-interval 3 7)
+             (make-interval 5 10))
+           (width-of-diff-of-two-intervals2
+             (make-interval 3 7)
+             (make-interval 5 10))))
 
   )

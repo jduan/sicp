@@ -212,3 +212,19 @@
 (defn sub-interval [x y]
   (make-interval (- (lower-bound x) (upper-bound y))
                  (- (upper-bound x) (lower-bound y))))
+
+;; Exercise 2.9
+(defn interval-width [x]
+  (/ (- (upper-bound x) (lower-bound x))
+     2))
+
+(defn width-of-sum-of-two-intervals [x y]
+  (interval-width (add-interval x y)))
+
+(defn width-of-sum-of-two-intervals2 [x y]
+  (+ (interval-width x) (interval-width y)))
+
+(defn width-of-diff-of-two-intervals [x y]
+  (interval-width (sub-interval x y)))
+
+(def width-of-diff-of-two-intervals2 width-of-sum-of-two-intervals2)
